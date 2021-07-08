@@ -1,0 +1,257 @@
+* {
+    margin         : 0;
+    padding        : 0;
+    box-sizing     : border-box;
+    list-style     : none;
+    text-decoration: none;
+    overflow       : hidden;
+}
+
+#navLogo {
+    text-align   : center;
+    margin-bottom: 30px;
+}
+
+.fas {
+    width: 25px;
+}
+
+.navigate {
+    margin         : 0px;
+    list-style-type: none;
+    padding        : 0;
+    overflow       : hidden;
+    background     : #ff8941;
+    border-bottom  : 2px solid rgb(0, 0, 0);
+}
+
+ul {
+    display        : flex;
+    justify-content: flex-end;
+}
+
+li a {
+    display        : block;
+    color          : #ffffff;
+    text-align     : center;
+    padding        : 14px 16px;
+    text-decoration: none;
+}
+
+
+/* Change the link color to #111 (black) on hover */
+
+li a:hover {
+    background-color: #203864;
+}
+
+li a:active {
+    background-color: black;
+}
+
+.sign {
+    background     : none;
+    border         : none;
+    color          : white;
+    padding        : 15px 15px;
+    text-decoration: none;
+    font-size      : 15px;
+}
+
+ul button:hover {
+    background-color: #203864;
+}
+
+li button:active {
+    background-color: #ff8941;
+}
+
+.logo {
+    float      : left;
+    margin-left: 15px;
+    color      : white;
+}
+
+.AboutContainer {
+    width           : 100%;
+    background-color: rgb(255, 255, 255);
+}
+
+.AboutContainer p {
+    width          : 80%;
+    text-align     : center;
+    display        : block;
+    justify-content: center;
+    align-items    : center;
+    margin         : auto;
+    width          : 85%;
+}
+
+.dps {
+    margin-top     : 40%;
+    text-align     : center;
+    display        : block;
+    justify-content: center;
+    align-items    : center;
+    margin         : auto;
+    width          : 15%;
+}
+
+.welcome {
+    font-size  : 25px;
+    font-weight: bold;
+    margin-top : 0%;
+    text-align : center;
+    color      : rgb(83, 110, 145);
+}
+
+.tag {
+    text-align: center;
+    font-size : 15px;
+    color     : rgb(83, 110, 145);
+}
+
+.centerParent {
+    height    : 85vh;
+    position  : relative;
+    text-align: center;
+    top       : 10%;
+}
+
+#loginTable td {
+    text-align: center;
+}
+
+.centerContainer {
+    max-width      : 700px;
+    width          : 100%;
+    height         : 75vh;
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    position       : absolute;
+    top            : 53%;
+    left           : 50%;
+    transform      : translate(-50%, -50%);
+    width          : 350px;
+    height         : 310px;
+    box-sizing     : border-box;
+    background     : rgba(255, 255, 255);
+    padding        : 40px;
+    border-radius  : 10px;
+}
+
+.centerContainerLog {
+    max-width      : 700px;
+    width          : 100%;
+    height         : 75vh;
+    display        : flex;
+    align-items    : center;
+    justify-content: center;
+    position       : absolute;
+    top            : 51%;
+    left           : 50%;
+    transform      : translate(-50%, -50%);
+    width          : 350px;
+    height         : 260px;
+    box-sizing     : border-box;
+    background     : rgba(255, 255, 255);
+    padding        : 40px;
+    border-radius  : 10px;
+}
+
+.textBox {
+    background-color: white;
+    color           : black;
+    border          : none;
+    padding-left    : 25px;
+    padding-right   : 25px;
+    width           : 310px;
+    height          : 40px;
+    margin          : 5px;
+    font-size       : 16px;
+    border          : 2px solid lightgray;
+    border-radius   : 8px;
+    background-color: #ffffff;
+    resize          : none;
+}
+
+.textBox:focus {
+    outline: none;
+}
+
+.faceboot {
+    font-size  : 48px;
+    font-family: segoe UI;
+    font-weight: bold;
+    color      : #ffffff;
+}
+
+.label {
+    font-size  : 16px;
+    font-family: moon_bold;
+    color      : #ffffff;
+}
+
+.label {
+    font-size  : 15px;
+    font-family: montserrat;
+    color      : #636363;
+}
+
+.connect {
+    color: white;
+}
+
+.create {
+    margin-top: 18px;
+    color     : white;
+    opacity   : 0.5;
+}
+
+.createLog {
+    margin-top: 30px;
+    color     : white;
+    opacity   : 0.5;
+}
+
+.log {
+    font-size: 23px;
+}
+
+.btnCorner {
+    font-family     : segoe UI;
+    border          : none;
+    border-radius   : 8px;
+    padding-left    : 25px;
+    padding-right   : 25px;
+    width           : 310px;
+    height          : 40px;
+    background-color: #171c23;
+    padding         : 10px;
+    color           : white;
+    font-size       : 16px;
+    margin          : 5px 2px;
+    cursor          : pointer;
+}
+
+.btnReg {
+    font-family     : segoe UI;
+    border          : none;
+    border-radius   : 8px;
+    padding-left    : 25px;
+    padding-right   : 25px;
+    width           : 310px;
+    height          : 40px;
+    background-color: green;
+    padding         : 5px;
+    color           : white;
+    font-size       : 16px;
+    margin          : 5px 2px;
+    cursor          : pointer;
+}
+
+.main_content {
+    width      : 100%;
+    margin-left: 200px;
+}
