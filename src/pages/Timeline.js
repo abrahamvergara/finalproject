@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from "react";
 import Nav from "../Components/nav";
 import firebase from "../utils/firebase";
+
+import pusa2 from '../pic/pusa.png'
+
 import {
   makeStyles,
   Grid,
@@ -135,6 +138,7 @@ export default function Timeline() {
           <Card>
             <CardContent>
               <Grid container spacing={2} alignItems="center" justify="center">
+              <img src={pusa2} className="pusa2" alt="logo2" />
                 <Grid item>
                   <TextField
                     variant="outlined"

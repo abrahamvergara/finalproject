@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+import pusa3 from '../pic/pusa3.png'
 
 
 import firebase from "../utils/firebase";
@@ -17,10 +18,11 @@ export default function nav() {
 
 return (
     <div class="navigate">
+      
         <h1 class="logo">Meower</h1>
         
         <ul>
-           
+        
             <li><Link to="/timeline">TIMELINE</Link></li>
             <li><Link to="/messages">MESSAGES</Link></li>
             <li><Link to="/profile">PROFILE</Link></li>
