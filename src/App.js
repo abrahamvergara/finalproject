@@ -25,6 +25,7 @@ import NotFound from "./pages/404";
 import Login from "./pages/login";
 import Register from "./pages/Register";
 import Timeline from "./pages/Timeline";
+import Messages from "./pages/messages";
 
 
 
@@ -80,6 +81,7 @@ export default function App() {
         <PublicRoute component={Register} isAuth={state.isAuth} restricted={true} path="/register" exact />
 
         <PrivateRoute component={Timeline} isAuth={state.isAuth} path="/Timeline" exact />
+        <PrivateRoute component={Messages} isAuth={state.isAuth} path="/Messages"/>
        
         <PrivateRoute component={Profile} isAuth={state.isAuth} path="/profile" />
      

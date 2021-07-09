@@ -88,6 +88,7 @@ export default function Timeline() {
   const handleChange = (e) => {
     setPayload({ post: e.target.value });
   };
+
   const addPost = () => {
     db.collection("users")
       .doc(state.userUid)

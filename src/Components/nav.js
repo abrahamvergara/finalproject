@@ -22,6 +22,7 @@ return (
         <ul>
            
             <li><Link to="/timeline">TIMELINE</Link></li>
+            <li><Link to="/messages">MESSAGES</Link></li>
             <li><Link to="/profile">PROFILE</Link></li>
             <li>
               <button class="sign" onClick={signout}>SIGN OUT</button>
