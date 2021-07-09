@@ -266,3 +266,13 @@ li button:active {
     width      : 100%;
     margin-left: 200px;
 }
+
+.fa-home, .fa-envelope, .fa-user, .fa-user{
+    float: left;
+    margin          : 2px 4px;
+    transition: all 0.3s ease;
+    color: white;
+    font-size: 15px;
+    
+  }
+

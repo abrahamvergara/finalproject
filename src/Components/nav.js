@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import pusa3 from '../pic/pusa3.png'
+
 
 
 import firebase from "../utils/firebase";
@@ -22,12 +22,11 @@ return (
         <h1 class="logo">Meower</h1>
         
         <ul>
-        
-            <li><Link to="/timeline">TIMELINE</Link></li>
-            <li><Link to="/messages">MESSAGES</Link></li>
-            <li><Link to="/profile">PROFILE</Link></li>
+            <li><Link to="/timeline"><i class="fa fa-home"></i>HOME</Link></li>
+            <li><Link to="/messages"><i class="fa fa-envelope"></i>MESSAGES</Link></li>
+            <li><Link to="/profile"><i class="fa fa-user" aria-hidden="true"></i>PROFILE</Link></li>
             <li>
-              <button class="sign" onClick={signout}>SIGN OUT</button>
+              <button class="sign" onClick={signout}><i class="fa fa-sign-out" aria-hidden="true"></i>SIGN OUT</button>
             </li>
            
         </ul>
