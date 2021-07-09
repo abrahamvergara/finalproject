@@ -19,7 +19,8 @@ export default function nav() {
 return (
     <div class="navigate">
       <img src={pusa3} className="pusa3" alt="logo" />
-        <h1 class="logo">Meower</h1>
+
+      <h1 class="meowerword">Meower</h1>
         
         <ul>
             <li><Link to="/timeline"><i class="fa fa-home"></i>HOME</Link></li>

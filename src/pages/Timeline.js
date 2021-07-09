@@ -133,7 +133,6 @@ export default function Timeline() {
       <Nav />
 
       <Grid container direction="column" spacing={2} alignItems="center">
-        ;
         <Grid item className={classes.card}>
           <Card>
             <CardContent>

@@ -286,9 +286,9 @@ li button:active {
 
 
 }
-.logo {
+.meowerword {
     float     : left;
-    margin    : 5px 0px;
+    margin    : 5px -5px;
     color     : white;
     font-size : 30px;
 
