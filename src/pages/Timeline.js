@@ -15,7 +15,7 @@ import {
   Typography,
   IconButton,
 } from "@material-ui/core";
-import { width } from "@material-ui/system";
+//import { width } from "@material-ui/system";//
 import { Delete as DeleteIcon } from "@material-ui/icons";
 
 const useStyles = makeStyles((theme) => ({

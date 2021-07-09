@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-
+import pusa3 from '../pic/pusa3.png'
 
 
 import firebase from "../utils/firebase";
@@ -18,7 +18,7 @@ export default function nav() {
 
 return (
     <div class="navigate">
-      
+      <img src={pusa3} className="pusa3" alt="logo" />
         <h1 class="logo">Meower</h1>
         
         <ul>

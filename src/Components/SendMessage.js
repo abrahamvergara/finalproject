@@ -9,6 +9,7 @@ function SendMessage() {
 
 
   async function sendMessage(e) {
+    
     e.preventDefault();
 
     const currentUser = firebase.auth().currentUser;
@@ -25,7 +26,7 @@ function SendMessage() {
   }
 
   return (
-    <div>
+    <div className="messages">
       <form onSubmit={sendMessage}>
           <br></br>
         <Input

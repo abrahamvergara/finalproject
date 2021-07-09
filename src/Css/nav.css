@@ -15,17 +15,16 @@
 .fas {
     width: 25px;
 }
+
 .pusa2 {
     width       : 10%;
     height      : 10%;
     margin-right: 4%;
 }
-.pusa3 {
-    width       : 5%;
-    height      : 5%;
-    
-   
-}
+
+
+
+
 
 .navigate {
     margin         : 0px;
@@ -267,12 +266,30 @@ li button:active {
     margin-left: 200px;
 }
 
-.fa-home, .fa-envelope, .fa-user, .fa-user{
-    float: left;
-    margin          : 2px 4px;
+.fa-home,
+.fa-envelope,
+.fa-user,
+.fa-user {
+    float     : left;
+    margin    : 2px 4px;
     transition: all 0.3s ease;
-    color: white;
-    font-size: 15px;
-    
-  }
+    color     : white;
+    font-size : 15px;
 
+}
+
+.pusa3 {
+    width : 4%;
+    height: 2%;
+    float     : left;
+    margin    : 2px 15px;
+
+
+}
+.logo {
+    float     : left;
+    margin    : 5px 0px;
+    color     : white;
+    font-size : 30px;
+
+}
