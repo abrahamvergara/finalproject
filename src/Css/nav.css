@@ -281,15 +281,16 @@ li button:active {
 .pusa3 {
     width : 4%;
     height: 2%;
-    float     : left;
-    margin    : 2px 15px;
+    float : left;
+    margin: 2px 15px;
 
 
 }
+
 .meowerword {
-    float     : left;
-    margin    : 5px -5px;
-    color     : white;
-    font-size : 30px;
+    float    : left;
+    margin   : 5px -5px;
+    color    : white;
+    font-size: 30px;
 
 }

@@ -1,31 +1,36 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import pusa from '../pic/pusa1.png'
-
+import { useHistory, Link } from "react-router-dom";
 import firebase from "../utils/firebase";
 
+import pusa from '../pic/pusa1.png'
+
 export default function Register() {
+  const db = firebase.firestore();
+
+
   const [payload, setPayload] = useState({
     email: "",
-    password: "",
+    pass: "",
     confirmPass: "",
   });
 
-  //const history = useHistory();
+
 
   const handleChange = (prop) => (e) => {
     setPayload({ ...payload, [prop]: e.target.value });
   };
 
+
+  const history = useHistory();
   const register = (e) => {
     e.preventDefault();
 
-    if (!payload.email || !payload.password || !payload.confirmPass) {
+    if (!payload.email || !payload.pass || !payload.confirmPass) {
       alert("Please Complete all fields!")
 
-    } else if (payload.password !== payload.confirmPass) {
+    } else if (payload.pass !== payload.confirmPass) {
       alert("Password does not match!");
-    } else if (payload.password.length < 5) {
+    } else if (payload.pass.length < 5) {
       alert("Password should be at least 6 characters")
 
 
@@ -33,26 +38,48 @@ export default function Register() {
       //backend
       firebase
         .auth()
-        .createUserWithEmailAndPassword(payload.email, payload.password)
+        .createUserWithEmailAndPassword(payload.email, payload.pass)
         .then((signedInUser) => {
           //registered and signed in  
           alert("Registered and signed in as " + signedInUser.user.email);
           console.log(signedInUser.user);
+
+          const currentUser = firebase.auth().currentUser;
+          db.collection("users")
+            .doc(currentUser.uid)
+            .set({
+              firstName: "First Name",
+              lastName: "Last Name",
+              bioDesc: "",
+              locDesc: "",
+              username: payload.email,
+              profilePic: false,
+
+            })
+            .then(() => {
+              var storage = firebase.storage();
+              var storageRef = storage.ref();
+              var uploadTask = storageRef.child("images/" + currentUser.uid).put(".././assets/images/profile.png");
+              uploadTask.then(() => {
+                history.push("/createprofile");
+
+
+
+              })
+
+            });
         })
-        .catch((error) => {
-          //var errorCode = error.code;
-          var errorMessage = error.message;
-          alert(errorMessage)
+        .catch((err) => {
+          alert(err.message);
         });
+
     }
-
-
   };
 
   return (
-    <div className="container">
+    <div className="container1">
       <div className="left">
-        <div className="header">
+        <div className="header1">
           <img src={pusa} className="pusa" alt="logo" />
           <h1 className="animation a1">Meower</h1>
 
@@ -63,8 +90,12 @@ export default function Register() {
 
           <label htmlFor="username">Email</label>
           <input
+
+            id="email"
+            label="Email Address"
             type="email"
             name="email"
+            autoComplete="email"
             onChange={handleChange("email")}
             value={payload.email}
           />
@@ -72,15 +103,20 @@ export default function Register() {
           <label htmlFor="password">Password</label>
           <input
             type="password"
+            label="Password"
             name="password"
-            onChange={handleChange("password")}
-            value={payload.password}
+            id="password"
+            onChange={handleChange("pass")}
+            value={payload.pass}
+            autoComplete="current-password"
           />
 
           <label htmlFor="confirmPass">Confirm Password</label>
           <input
             type="password"
             name="confirmPass"
+            label="Confirm Password"
+            id="confirmPass"
             onChange={handleChange("confirmPass")}
             value={payload.confirmPass}
           />
@@ -97,3 +133,5 @@ export default function Register() {
 
   );
 }
+
+

@@ -10,14 +10,14 @@ body {
   font-family: 'Rubik', sans-serif;
 }
 
-.container {
+.container1 {
   display         : flex;
   height          : 100vh;
   background-color: #ffffff;
 }
 
 .pusa {
-  width : 50%;
+  width : 30%;
   height: auto;
 }
 
@@ -46,21 +46,20 @@ body {
 
 
 
-.header>h2,
+.container1 .header1>h2,
 h1 {
   margin: 0;
   color : #ff8941;
 }
 
-.header>h4 {
-  margin-top : 10px;
+.header1 >h4 {  margin-top : 10px;
   font-weight: normal;
   font-size  : 15px;
-  color      : rgba(0, 0, 0, .4);
+  color      : rgba(0, 0, 0, 0.4);
 }
 
 .form {
-  max-width     : 80%;
+  max-width     : 100%;
   display       : flex;
   flex-direction: column;
 
@@ -75,16 +74,25 @@ h1 {
   font-size: 14px;
 }
 
-.form-field {
-  height       : 46px;
-  padding      : 0 16px;
+#password{
+  height       : 20px;
+  
+  padding      : 99 16px;
   border       : 2px solid #ddd;
   border-radius: 4px;
   font-family  : 'Rubik', sans-serif;
   outline      : 0;
   transition   : .2s;
-  margin-top   : 20px;
-
+}
+.container1 #email, #confirmPass{
+  width: 270px;
+  height       : 20px;
+  padding      : 99 16px;
+  border       : 2px solid #ddd;
+  border-radius: 4px;
+  font-family  : 'Rubik', sans-serif;
+  outline      : 0;
+  transition   : .2s;
 }
 
 .form-field:focus {
@@ -160,6 +168,6 @@ h1 {
   100% {
     opacity: 1;
     padding: 20px 40px;
-    width  : 440px;
+    width  : 350px;
   }
 }

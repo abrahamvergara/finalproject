@@ -1,96 +1,145 @@
-import "./App.css";
-import "./Css/login.css"
-import "./Css/nav.css"
-import "./Css/messages.css"
-import "./Css/home.css"
-import "./Css/events.css"
-import "./Css/timeline.css"
+import "./CSS/stylesheets/App.css";
+import "./CSS/stylesheets/Style.css";
+
+import "./CSS/login.css";
+import "./CSS/chat.css";
+import React, { useState, useEffect } from "react";
 import {
   BrowserRouter as Router,
+  Redirect,
   Route,
   Switch,
-  Redirect,
 } from "react-router-dom";
 
-import React, { useState, useEffect } from "react"
-
-/*material-ui*/
+//material ui//
 import { ThemeProvider } from "@material-ui/core";
+
+//utils//
+import firebase from "./utils/firebase";
 import theme from "./utils/theme";
 
-/**Pages */
-
-import Profile from "./pages/Profile";
-import NotFound from "./pages/404";
-import Login from "./pages/login";
+//pages//
+import Home from "./pages/Home";
+import MyProfile from "./pages/MyProfile";
+import Loading from "./pages/Loading";
+import Login from "./pages/Login";
+import Notification from "./pages/Notification";
 import Register from "./pages/Register";
-import Timeline from "./pages/Timeline";
-import Messages from "./pages/messages";
+import Friends from "./pages/Friends";
+import CreateProfile from "./pages/CreateProfile";
 
 
 
 
 
-/**Route*/
-import PrivateRoute from "./Routers/PrivateRoute";
-import PublicRoute from "./Routers/PublicRoute";
-
-/**Firebase */
-import firebase from "./utils/firebase";
 
 
+import PrivateRoute from "./routers/PrivateRoute";
+import PublicRoute from "./routers/PublicRoute";
 
-export default function App() {
-  //loading
+import chat from "./pages/Chat";
+import SendMessage from "./pages/SendMessage";
+
+
+
+
+function App() {
   const [state, setState] = useState({
     isAuth: false,
     isLoading: true,
-  })
-
-
+  });
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged(function (user) {
       if (user) {
-        setState({ isAuth: true, isLoading: false })
+        setState({ isAuth: true, isLoading: false });
       } else {
-        //NO USER IS SIGN IN
-        setState({ isAuth: false, isLoading: false })
+        setState({ isAuth: false, isLoading: false });
       }
-      console.log(user)
     });
-  }, [])
+  }, []);
 
   if (state.isLoading) {
-    return <p></p>
+    return <p>Loading..</p>;
   }
-
-
   return (
-    
-    < ThemeProvider theme = { theme } >
+    <ThemeProvider theme={theme}>
+      <Router>
+        <Switch>
+          <Route path="/" exact>
+            <Redirect to="/login" exact />
+          </Route>
 
+          <PublicRoute
+            component={Login}
+            isAuth={state.isAuth}
+            restricted={true}
+            path="/login"
+            exact
+          />
+          <PublicRoute
+            component={Register}
+            isAuth={state.isAuth}
+            restricted={true}
+            path="/register"
+            exact
+          />
+          <PrivateRoute
+            component={Home}
+            isAuth={state.isAuth}
+            path="/home"
+            exact
+          />
+          <PrivateRoute
+            component={MyProfile}
+            isAuth={state.isAuth}
+            path="/profile"
+            exact
+          />
+          <PrivateRoute
+            component={CreateProfile}
+            isAuth={state.isAuth}
+            path="/createprofile"
+            exact
+          />
+          <PrivateRoute
+            component={Notification}
+            isAuth={state.isAuth}
+            path="/notification"
+            exact
+          />
+          <PrivateRoute
+            component={Friends}
+            isAuth={state.isAuth}
+            path="/friends"
+            exact
+          />
+          <PrivateRoute
+            component={Loading}
+            isAuth={state.isAuth}
+            path="/loading"
+            exact
+          />
 
-    <Router>
-      <Switch>
-        <Route path="/" exact>
-          <Redirect to="/login" exact />
-        </Route>
+          <PrivateRoute
+            component={chat}
+            isAuth={state.isAuth}
+            path="/chat"
+            exact
+          />
 
-        <PublicRoute component={Login} isAuth={state.isAuth} restricted={true} path="/login" exact />
-        <PublicRoute component={Register} isAuth={state.isAuth} restricted={true} path="/register" exact />
+          <PrivateRoute
+            component={SendMessage}
+            isAuth={state.isAuth}
+            path="/SendMessage"
+            exact
+          />
 
-        <PrivateRoute component={Timeline} isAuth={state.isAuth} path="/Timeline" exact />
-        <PrivateRoute component={Messages} isAuth={state.isAuth} path="/Messages"/>
-       
-        <PrivateRoute component={Profile} isAuth={state.isAuth} path="/profile" />
-     
-
-        <Route component={NotFound} />
-      </Switch>
-
-
-    </Router>
-    </ThemeProvider >
+      
+        </Switch>
+      </Router>
+    </ThemeProvider>
   );
 }
+
+export default App;
