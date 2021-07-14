@@ -1,10 +1,9 @@
 import React from 'react'
 
-export default function Header() {
+export default function Loading() {
     return (
         <div>
-           <h1>MY HEADER</h1> 
+            <p> loading page</p>
         </div>
     )
 }
-
